@@ -92,7 +92,7 @@ CPU usage
 | --- | --- | --- |
 | `cpu-multiplications` | CPU usage is a nice plateau corresponding to the number of threads | it's compute-bound and can use the all the compute resources it's given |
 | `cpu-trigonometry` | CPU usage drops to fewer threads | This is why it doesn't follow Amdhal's law so well (see section "Duration vs. parallelism" above). The cause is a imbalance between threads: threads with higher `omp_thread_num` compute cosines of greater number than threads with lower `omp_thread_num`, because [`x = i * size + j`](../../programs/cpu-trigonometry.cpp:14), and it turns out computing cosines of large numbers is longer than for smaller numbers. |
-| `cpu-multiplications` | CPU usage is a plateau corresponding to the number of threads | None; I need to understand why threads are not sleeping, waiting for blocking I/O to finish. |
+| `disk-write` | CPU usage is a plateau corresponding to the number of threads | None; I need to understand why threads are not sleeping, waiting for blocking I/O to finish. |
 | `raw-bandwidth-copy` | CPU usage is a plateau a bit below to the number of threads | Consistent with constant duration and increasing user time |
 
 Memory usage
